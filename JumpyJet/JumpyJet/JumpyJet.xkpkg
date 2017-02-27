@@ -1,0 +1,69 @@
+!Package
+Id: 1bef2a7f-41ae-4921-91d2-06338f611b8c
+SerializedVersion: {Assets: 0.0.4}
+Meta:
+    Name: JumpyJet
+    Version: 1.0.0.0
+    Authors: []
+    Owners: []
+    Dependencies:
+        -   Name: Xenko
+            Version: 1.9.0-beta
+            RootAssets: []
+LocalDependencies: []
+Profiles:
+    -   Name: Shared
+        Platform: Shared
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Shared
+            -   Path: JumpyJet.Game/Effects
+        OutputGroupDirectories: {}
+        ProjectReferences:
+            -   Id: 45b5a41b-e0cc-4bf5-9e6c-b96fa4c76a48
+                Location: JumpyJet.Game/JumpyJet.Game.csproj
+                Type: Library
+    -   Name: Windows
+        Platform: Windows
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Windows
+        OutputGroupDirectories: {}
+        ProjectReferences:
+            -   Id: cb257704-7e3a-4269-a216-5460fda98ebd
+                Location: JumpyJet.Windows/JumpyJet.Windows.csproj
+                Type: Executable
+    -   Name: UWP
+        Platform: UWP
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/UWP
+        OutputGroupDirectories: {}
+        ProjectReferences:
+            -   Id: 4a1ef34f-efb5-41fb-8d6d-51a70f1dbcbb
+                Location: JumpyJet.UWP/JumpyJet.UWP.csproj
+                Type: Executable
+    -   Name: Android
+        Platform: Android
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/Android
+        OutputGroupDirectories: {}
+        ProjectReferences:
+            -   Id: fc94676a-723b-46e3-afb5-7b89a6240e5a
+                Location: JumpyJet.Android/JumpyJet.Android.csproj
+                Type: Executable
+    -   Name: iOS
+        Platform: iOS
+        InheritProfiles: []
+        AssetFolders:
+            -   Path: Assets/iOS
+        OutputGroupDirectories: {}
+        ProjectReferences:
+            -   Id: c59ab609-5b31-41e2-91fa-b7f0595d340a
+                Location: JumpyJet.iOS/JumpyJet.iOS.csproj
+                Type: Executable
+ExplicitFolders: []
+Bundles: []
+TemplateFolders: []
+RootAssets: []

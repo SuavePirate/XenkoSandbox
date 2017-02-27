@@ -1,0 +1,137 @@
+!SceneAsset
+Id: 752d9984-bcef-47d2-aa61-b91b9cd14a8b
+SerializedVersion: {Xenko: 1.9.0-beta06}
+Tags: []
+SceneSettings:
+    Id: 142dc57f-0a87-4097-9abd-27d88e13bdb4
+    GraphicsCompositor: !SceneGraphicsCompositorLayers
+        Cameras:
+            5985711bbb63464899a0a2c3e8dbdf34:
+                Name: null
+                Camera: 6ec17338-026d-4ad3-9615-4975281cf3ba/360f48ca-45bf-4b70-97ee-4d9531d642f6
+        Layers: {}
+        Master:
+            Name: SceneGraphicsLayer
+            Output: !MasterRenderFrameProvider {}
+            Renderers:
+                a5ae7bda8ddf0b419d838fc23d23fe05: !ClearRenderFrameRenderer
+                    Color: {R: 0.392156869, G: 0.58431375, B: 0.929411769, A: 1.0}
+                    Output: !CurrentRenderFrameProvider {}
+                7eedd467d5da1141b77e17c7a9bf44c0: !SceneCameraRenderer
+                    Mode: !CameraRendererModeForward {}
+                    Camera:
+                        Index: 0
+                    Output: !CurrentRenderFrameProvider {}
+                    Viewport: {X: 0.0, Y: 0.0, Width: 100.0, Height: 100.0}
+                    ForceAspectRatio: false
+    EditorSettings:
+        GridColor: {R: 0.7058824, G: 0.7058824, B: 0.7058824}
+        SceneUnit: 10.0
+        Mode: !SceneEditorGraphicsModeLDRSettings
+            BackgroundColor: {R: 0.196078435, G: 0.196078435, B: 0.196078435}
+Hierarchy:
+    RootPartIds:
+        - 6ec17338-026d-4ad3-9615-4975281cf3ba
+        - ca4ad047-2db2-4ab1-baca-d8c4e9a469bb
+        - d87ce433-90b0-4819-8f55-9d08330b581d
+        - c2306322-b9da-4756-8c50-0415142c6dd1
+        - c2d8e639-281f-419d-b8cb-77d7ef14a7f7
+        - 47550ad3-4887-4173-95e0-d98048465edd
+    Parts:
+        -   Entity:
+                Id: 47550ad3-4887-4173-95e0-d98048465edd
+                Name: UI
+                Components:
+                    64f47e9601bd0a46bc760d28a790f231: !TransformComponent
+                        Id: 967ef464-bd01-460a-bc76-0d28a790f231
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    e907fd00a1f2c14b84bb467e84daeb4a: !JumpyJet.UIScript,JumpyJet.Game
+                        Id: 00fd07e9-f2a1-4bc1-84bb-467e84daeb4a
+                        Font: b716c174-c874-4d3f-bbe4-425774dd37e4:Font
+                        UIImages: 12108d03-3ebd-4c5a-abed-55f34cdec4bf:UIImages
+                    035f3412b5435041984c31cfec3c914f: !UIComponent
+                        Id: 12345f03-43b5-4150-984c-31cfec3c914f
+                        Page: null
+                        Resolution: {X: 640.0, Y: 1136.0, Z: 20.0}
+                        Size: {X: 1.0, Y: 1.0, Z: 1.0}
+                        ResolutionStretch: FixedWidthFixedHeight
+        -   Entity:
+                Id: 6ec17338-026d-4ad3-9615-4975281cf3ba
+                Name: Camera
+                Components:
+                    a968da1afd5fae469f1cb0c4575cbaf2: !TransformComponent
+                        Id: 1ada68a9-5ffd-46ae-9f1c-b0c4575cbaf2
+                        Position: {X: 0.0, Y: 0.0, Z: 200.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    ca480f36bf45704b97ee4d9531d642f6: !CameraComponent
+                        Id: 360f48ca-45bf-4b70-97ee-4d9531d642f6
+                        Projection: Orthographic
+                        OrthographicSize: 1136.0
+                        NearClipPlane: 1.0
+                        AspectRatio: 0.56338
+        -   Entity:
+                Id: c2306322-b9da-4756-8c50-0415142c6dd1
+                Name: Background
+                Components:
+                    c9cce13a34525f4e86444531ed6e4427: !TransformComponent
+                        Id: 3ae1ccc9-5234-4e5f-8644-4531ed6e4427
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    c870d1c1091a674dbc8ef4c843b5fbcd: !JumpyJet.BackgroundScript,JumpyJet.Game
+                        Id: c1d170c8-1a09-4d67-bc8e-f4c843b5fbcd
+                        ParallaxBackgrounds: f322e738-7e0f-46b4-b50f-b27680a11b0f:ParallaxBackgrounds
+        -   Entity:
+                Id: c2d8e639-281f-419d-b8cb-77d7ef14a7f7
+                Name: GameScript
+                Components:
+                    8ccbf1ddec9fe54a9ca4c27cd34606ef: !TransformComponent
+                        Id: ddf1cb8c-9fec-4ae5-9ca4-c27cd34606ef
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    89578ba40f182e4eb0616ac22108e376: !JumpyJet.GameScript,JumpyJet.Game
+                        Id: a48b5789-180f-4e2e-b061-6ac22108e376
+                        Priority: 10
+                        UI: 47550ad3-4887-4173-95e0-d98048465edd/00fd07e9-f2a1-4bc1-84bb-467e84daeb4a
+                        Background: c2306322-b9da-4756-8c50-0415142c6dd1/c1d170c8-1a09-4d67-bc8e-f4c843b5fbcd
+                        Character: ca4ad047-2db2-4ab1-baca-d8c4e9a469bb/75708204-1bb2-4d09-93ae-75057e2a88b0
+                        Pipes: d87ce433-90b0-4819-8f55-9d08330b581d/71cd41a9-093c-4595-8f02-918f1c0258bd
+        -   Entity:
+                Id: ca4ad047-2db2-4ab1-baca-d8c4e9a469bb
+                Name: Character
+                Components:
+                    4b84fea35a08694db0700bb9ae1b6042: !TransformComponent
+                        Id: a3fe844b-085a-4d69-b070-0bb9ae1b6042
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    04827075b21b094d93ae75057e2a88b0: !JumpyJet.CharacterScript,JumpyJet.Game
+                        Id: 75708204-1bb2-4d09-93ae-75057e2a88b0
+                    9d999e33123c0845a9aea0cc7a5b829b: !SpriteComponent
+                        Id: 339e999d-3c12-4508-a9ae-a0cc7a5b829b
+                        SpriteProvider: !SpriteFromSheet
+                            Sheet: 1490da4f-8689-4c71-ac6a-d8698709cf97:Sprites
+                        Color: {R: 1.0, G: 1.0, B: 1.0, A: 1.0}
+                        IgnoreDepth: true
+        -   Entity:
+                Id: d87ce433-90b0-4819-8f55-9d08330b581d
+                Name: Pipes
+                Components:
+                    cc7d598993599e47b8cdaee187fa3476: !TransformComponent
+                        Id: 89597dcc-5993-479e-b8cd-aee187fa3476
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    a941cd713c0995458f02918f1c0258bd: !JumpyJet.PipesScript,JumpyJet.Game
+                        Id: 71cd41a9-093c-4595-8f02-918f1c0258bd
+                        Sprites: 1490da4f-8689-4c71-ac6a-d8698709cf97:Sprites
