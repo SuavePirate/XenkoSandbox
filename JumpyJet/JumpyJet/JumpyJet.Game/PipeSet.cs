@@ -14,7 +14,7 @@ namespace JumpyJet
         private const float VerticalDistanceBetweenPipe = 230f;
 
         private readonly Entity topPipe;
-        private readonly Entity bottomPipe;
+        //private readonly Entity bottomPipe;
 
         private readonly float scrollSpeed;
         private readonly float pipeWidth;
@@ -36,9 +36,9 @@ namespace JumpyJet
             // Store Entity and create another one for two rendering:
             // top and bottom sprite of pipe.
             var spriteComp = referencePipeEntity.Get<SpriteComponent>();
-             bottomPipe = referencePipeEntity.Clone();
+             //bottomPipe = referencePipeEntity.Clone();
             topPipe = referencePipeEntity.Clone();
-            Entity.AddChild(bottomPipe);
+            //Entity.AddChild(bottomPipe);
             Entity.AddChild(topPipe);
 
             var sprite = spriteComp.CurrentSprite;
@@ -51,8 +51,8 @@ namespace JumpyJet
 
             // Place the top/bottom pipes relatively to the root.
             topPipe.Transform.Position.Y = -(VerticalDistanceBetweenPipe + pipeHeight) * 0.5f;
-            bottomPipe.Transform.Position.Y = (VerticalDistanceBetweenPipe + pipeHeight) * 0.5f;
-            bottomPipe.Transform.Rotation = Quaternion.RotationZ(MathUtil.Pi);
+            //bottomPipe.Transform.Position.Y = (VerticalDistanceBetweenPipe + pipeHeight) * 0.5f;
+            //bottomPipe.Transform.Rotation = Quaternion.RotationZ(MathUtil.Pi);
 
             ResetPipe();
         }
@@ -65,7 +65,7 @@ namespace JumpyJet
         public void ResetPipe(float resetScrollPos)
         {
             // Set a random height to the pipe set.
-            Entity.Transform.Position = new Vector3(resetScrollPos, random.Next(-50, 225), 0);
+            Entity.Transform.Position = new Vector3(resetScrollPos, random.Next(-50, -20), 0);
         }
 
         public void Update(float elapsedTime)
@@ -79,10 +79,10 @@ namespace JumpyJet
             return GetCollider(topPipe);
         }
 
-        public RectangleF GetBottomPipeCollider()
-        {
-            return GetCollider(bottomPipe);
-        }
+        //public RectangleF GetBottomPipeCollider()
+        //{
+        //    return GetCollider(bottomPipe);
+        //}
 
         private RectangleF GetCollider(Entity entity)
         {

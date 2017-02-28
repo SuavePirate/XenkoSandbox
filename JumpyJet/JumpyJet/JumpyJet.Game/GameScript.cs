@@ -29,7 +29,7 @@ namespace JumpyJet
         /// </summary>
         public PipesScript Pipes;
 
-        public const float GameSpeed = 290f;
+        public const float GameSpeed = 490f;
 
         public const int PipeDepth = 4;
 
@@ -65,8 +65,8 @@ namespace JumpyJet
                 Character.IsOnGround = false;
 
             // Determine if the character is colliding, if so start the game over mode
-            //if (Character.IsColliding(nextPipeSet))
-            //    StartGameOverMode();
+            if (Character.IsColliding(nextPipeSet))
+                StartGameOverMode();
         }
 
         public override void Cancel()

@@ -23,7 +23,7 @@ namespace JumpyJet
         private static readonly RectangleF HeadRectangle = new RectangleF(36, 63, 20, 20);
 
         private const int TopLimit = 568 - 200;
-        public static float NormalVelocityY = 650;
+        public static float NormalVelocityY = 850;
         private const float VelocityAboveTopLimit = 200;
         private const int FlyingSpriteFrameIndex = 1;
         private const int FallingSpriteFrameIndex = 0;
@@ -176,8 +176,7 @@ namespace JumpyJet
                 collider.X = colliders[i].X + position.X - agentWidth / 2;
                 collider.Y = colliders[i].Y + position.Y - agentHeight / 2;
 
-                if (collider.Intersects(nextPipeSet.GetBottomPipeCollider()) ||
-                    collider.Intersects(nextPipeSet.GetTopPipeCollider()))
+                if (collider.Intersects(nextPipeSet.GetTopPipeCollider())) //collider.Intersects(nextPipeSet.GetBottomPipeCollider()) ||
                     return true;
             }
 

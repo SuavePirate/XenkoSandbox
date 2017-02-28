@@ -12,7 +12,7 @@ namespace JumpyJet
     /// </summary>
     public class PipesScript : SyncScript
     {
-        private const int GapBetweenPipe = 400;
+        private const int GapBetweenPipe = 600;
         private const int StartPipePosition = 400;
 
         public SpriteSheet Sprites;
