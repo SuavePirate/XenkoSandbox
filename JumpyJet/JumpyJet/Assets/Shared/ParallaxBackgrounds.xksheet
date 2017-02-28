@@ -27,7 +27,7 @@ Sprites:
     25da67f488b8ed4d902225ab620291aa:
         Source: ../../Resources/tex1.png
         Name: parallax_gear_frame
-        TextureRegion: {X: 0, Y: 0, Width: 1920, Height: 1136}
+        TextureRegion: {X: 0, Y: 0, Width: 2048, Height: 2048}
         Center: {X: 320.0, Y: 568.0}
         CenterFromMiddle: false
         Borders: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}

@@ -60,11 +60,13 @@ namespace JumpyJet
 
             // Check if the character is colliding with the floor
             if (Character.Entity.Transform.Position.Y < FloorLimit)
-                StartGameOverMode();
+                Character.IsOnGround = true;
+            else if (Character.IsOnGround)
+                Character.IsOnGround = false;
 
             // Determine if the character is colliding, if so start the game over mode
-            if (Character.IsColliding(nextPipeSet))
-                StartGameOverMode();
+            //if (Character.IsColliding(nextPipeSet))
+            //    StartGameOverMode();
         }
 
         public override void Cancel()

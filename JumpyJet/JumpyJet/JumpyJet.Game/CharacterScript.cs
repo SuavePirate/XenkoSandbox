@@ -23,7 +23,7 @@ namespace JumpyJet
         private static readonly RectangleF HeadRectangle = new RectangleF(36, 63, 20, 20);
 
         private const int TopLimit = 568 - 200;
-        private const float NormalVelocityY = 250;
+        public static float NormalVelocityY = 650;
         private const float VelocityAboveTopLimit = 200;
         private const int FlyingSpriteFrameIndex = 1;
         private const int FallingSpriteFrameIndex = 0;
@@ -38,13 +38,14 @@ namespace JumpyJet
         private Vector3 velocity;
 
         private RectangleF[] colliders;
+        public bool IsOnGround { get; set; }
 
         /// <summary>
         /// The position of the back of the character along the X axis.
         /// </summary>
         public float PositionBack
         {
-            get { return Entity.Transform.Position.X - agentWidth/2f; }
+            get { return Entity.Transform.Position.X - agentWidth / 2f; }
         }
 
         public void Start()
@@ -121,12 +122,16 @@ namespace JumpyJet
                     velocity.Y = position.Y > TopLimit ? VelocityAboveTopLimit : NormalVelocityY;
 
                 // update position/velocity
-                velocity += Gravity * elapsedTime;
+                else if (IsOnGround)
+                    velocity.Y = 0;
+                else
+                    velocity += Gravity * elapsedTime;
+
                 position += velocity * elapsedTime;
 
                 // update animation and rotation value
                 UpdateAgentAnimation();
-                
+
                 // update the position/rotation
                 UpdateTransformation();
             }
@@ -134,7 +139,7 @@ namespace JumpyJet
 
         private void UpdateTransformation()
         {
-            Entity.Transform.Position= position;
+            Entity.Transform.Position = position;
             Entity.Transform.RotationEulerXYZ = rotation;
         }
 
@@ -151,7 +156,7 @@ namespace JumpyJet
             // Set falling sprite frame
             var provider = Entity.Get<SpriteComponent>().SpriteProvider as SpriteFromSheet;
             if (provider != null)
-                provider.CurrentFrame = isFalling? FallingSpriteFrameIndex: FlyingSpriteFrameIndex;
+                provider.CurrentFrame = isFalling ? FallingSpriteFrameIndex : FlyingSpriteFrameIndex;
 
             // Rotate a sprite
             rotation.Z += rotationSign * MathUtil.Pi * 0.01f;
@@ -165,7 +170,7 @@ namespace JumpyJet
         /// <returns></returns>
         public bool IsColliding(PipeSet nextPipeSet)
         {
-            for (var i=0; i<colliders.Length; ++i)
+            for (var i = 0; i < colliders.Length; ++i)
             {
                 var collider = colliders[i];
                 collider.X = colliders[i].X + position.X - agentWidth / 2;

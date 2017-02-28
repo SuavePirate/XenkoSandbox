@@ -2,7 +2,7 @@
 Id: 12108d03-3ebd-4c5a-abed-55f34cdec4bf
 SerializedVersion: {Xenko: 1.5.0-alpha01}
 Tags: []
-Type: Sprite2D
+Type: UI
 ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
 Format: Color32Bits
 Alpha: Explicit
